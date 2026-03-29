@@ -7,13 +7,18 @@
     "dev": "node src/server.ts",
     "format:fix": "prettier . --write",
     "format:check": "prettier . --check",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chetan Singh <chetan738090@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^25.5.0",
+    "eslint": "^10.1.0",
     "prettier": "3.8.1",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.57.2"
   }
 }
