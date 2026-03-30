@@ -1,7 +1,17 @@
-import { Config } from './config/index.js'
+import app from './app'
+import { Config } from './config/index'
+import logger from './config/logger'
 
-function welcome(name: string) {
-    console.log(`Welcome ${name} to the server running on port ${Config.port}`)
+const startServer = () => {
+    const PORT = Config.PORT
+    try {
+        app.listen(PORT, () => {
+            logger.info(`Server is running on port ${PORT}`)
+        })
+    } catch (error) {
+        console.error(error)
+        process.exit(1)
+    }
 }
 
-welcome('Chetan')
+startServer()
